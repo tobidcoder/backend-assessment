@@ -28,6 +28,7 @@ class CreateRepaymentsTable extends Migration
             $table->decimal('repayment_interest',20,2);
             $table->decimal('total_amount_and_interest',20,2);
             $table->bigInteger('repayment_code');
+            $table->integer('tenure');
             $table->timestamps();
         });
     }

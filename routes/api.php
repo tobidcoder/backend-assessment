@@ -18,4 +18,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/calculate_loan_repayment')
+Route::post('/login', 'UserController@login');
+Route::post('/calculate_loan_repayment', 'RepaymentController@calculateLoanRepayment');
+
+Route::group(['middleware' => ['auth:api']], function () {
+    Route::get('/send_notification', 'NotificationController@sendNotification');
+    Route::get('/get_currency', 'CurrencyController@show');
+    Route::post('/set_base_currency', 'UserController@setBaseCurrency');
+});
+
+Route::any('/{var?}', function () {
+    return response()->json(['message' => 'API Endpoint Not Found!'], 404);
+});

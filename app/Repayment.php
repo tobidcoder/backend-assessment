@@ -23,7 +23,8 @@ class Repayment extends Model
         'repayment_amount',
         'repayment_interest',
         'total_amount_and_interest',
-        'repayment_code'
+        'repayment_code',
+        'tenure',
     ];
 
     /**
