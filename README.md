@@ -1,3 +1,56 @@
+Run: git clone https://github.com/tobidcoder/backend-assessment.git
+
+Then: cd backend-assessment
+
+Then : composer install
+
+Then
+
+npm install
+
+Then: Create database backend-assessment
+
+cp .env.example .env
+
+Change database name in .env to backend-assessment
+Run
+
+php artisan key:generate
+
+php artisan migrate:fresh --seed
+
+or 
+## php artisan migrate
+## php artisan db:seed
+
+Then
+
+php artisan passport:install
+
+Finally Run
+
+php artisan serve
+
+Open postman. login.
+Password is password
+
+Set headers with Auth token generate. (Bearer token)
+
+Set up mailtrap email in env
+
+<p> Happy testing. </p> 
+
+Routes:
+    Un-Guarded Routes
+    POST: http://127.0.0.1:8000/api/login/ 
+    POST: http://127.0.0.1:8000/api/calculate_loan_repayment (date formart [YYY-MM-DD])
+    Guarded Routes
+    GET: http://127.0.0.1:8000/api/send_notification/
+    GET: http://127.0.0.1:8000/api/get_currency
+    POST: http://127.0.0.1:8000/api/set_base_currency
+    
+    
+    
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
